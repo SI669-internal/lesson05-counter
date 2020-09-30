@@ -2,18 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 class Counter extends React.Component {
+
   constructor(props) {
-    super(props);
+    super(props); // ignore jslint error: https://stackoverflow.com/questions/63856962/understanding-why-super-is-deprecated-in-a-react-class-component
     this.state = {
       currentValue: this.props.start
     }
   }
 
   add = () => {
-    this.setState(prevState => {
-      return {
-        currentValue: prevState.currentValue + this.props.incr
-      };
+    this.setState({
+        currentValue: this.state.currentValue + this.props.incr
     });
   }
 
